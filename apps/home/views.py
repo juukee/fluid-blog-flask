@@ -35,14 +35,17 @@ def index():
     end = start + config.PER_PAGE
     total = BlogModel.select().count()
     pagination = Pagination(page=page,start=start,end=end,total=total)
-    blogs = BlogModel.select()
+    blogs = BlogModel.select().paginate(int(page),int(config.PER_PAGE))
     context = {
      'blogs' : blogs,
      'pagination' : pagination
 
     }
     return render_template('index.html',**context)
+@home.route('/blogs/<int:page>')
+def detail(page):
 
+    return render_template('Index{}.html'.format(page))
 
 @home.route('/archives')
 def archives():
