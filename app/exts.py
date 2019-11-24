@@ -2,6 +2,11 @@
 # from flask_sqlalchemy import SQLAlchemy
 from app import app,db
 from app.models import Content
+from flask_mail import Mail
+from flask_caching import Cache
+mail = Mail()
+cache = Cache()
+
 # db = SQLAlchemy()
 # db.init_app(app)
 db.create_all()

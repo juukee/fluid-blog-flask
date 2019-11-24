@@ -1,6 +1,5 @@
 # coding:utf-8
 import os
-import os
 
 DB_USERNAME = 'root'
 DB_PASSWORD = '123456'  # 如果没有密码的话
@@ -8,6 +7,20 @@ DB_HOST = 'localhost'
 DB_PORT = '3306'
 DB_NAME = 'spider'
 DB_TYPE = 'charset=utf8'  # charset=utf8
+#分页设置
+PER_PAGE = 10
+
+#SERVER_NAME = ''
+
+DEFAULT_THEME = 'default'
+
+CACHE_TYPE = "simple"  # Can be "memcached", "redis", etc.
+WEBPACK_MANIFEST_PATH = "webpack/manifest.json"
+
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))   
+STATIC = os.path.join(APP_ROOT, 'static')
+TEMPLATE = os.path.join(APP_ROOT, 'templates')
+PUBLIC = os.path.join(APP_ROOT, 'public')
 
 
 class Config:
